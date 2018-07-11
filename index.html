@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <title>Train Schedule</title>
+        <script rel="stylesheet" src="assets/css/style.css"></script>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        
+        <!--Firebase-->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+
+        <!--moment.js-->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.13.0/moment.min.js"></script>
+    
+    </head>
+
+    <body style="background-color: lightblue">
+        <div class="container">
+            <!--jumbotron-->
+            <div class="jumbotron" style="background-color: lightslategray; color: rgb(0, 182, 112)">
+                <h1 class="text-center">Anytime is Train Time</h1>
+                <h4 class="text-center">Choo Choo. CHee Chee.</h4>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+            <!--card display of train times-->
+            <div class="card card-primary" style="background-color: lightslategray; color:white">
+                <div class="card-heading" style="color: rgb(0, 182, 112); float: center">
+                    <h3 class="card-title"><strong>Current Train Schedule</strong></h3>
+                </div>
+                    <div class="card-body">
+                      <table class="table table-hover" id="trainTable" style="color: rgb(0, 85, 182)">
+                        <thead>
+                          <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency (min)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+            <!--Admin Form-->
+            <div class="card card-primary" style="background-color: lightslategray; color:white">
+                <div class="card-heading" style="color: rgb(0, 182, 112)">
+                    <h3 class="card-title"><strong>Add Train</strong></h3>
+                </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                              <label for="trainName">Train Name</label>
+                              <input class="form-control" id="trainName" type="text">
+                            </div>
+                            <div class="form-group row">
+                              <label for="destination">Destination</label>
+                              <input class="form-control" id="destination" type="text">
+                            </div>
+                            <div class="form-group row">
+                              <label for="trainTime">First Train Time (HH:mm military time)</label>
+                              <input class="form-control" id="trainTime" type="text">
+                            </div>
+                            <div class="form-group row">
+                              <label for="frequency">Frequency (min)</label>
+                              <input class="form-control" id="frequency" type="text" min="1">
+                            </div>
+                            <button class="btn btn-primary" id="adminSubmit" type="submit">Submit</button>
+                          </form>
+                    </div>
+                        
+                </div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/javascript/app.js"></script>
+    </body>
+</html>
